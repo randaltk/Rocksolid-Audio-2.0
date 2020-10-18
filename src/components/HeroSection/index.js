@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "../ButtonComponent";
+import { motion } from "framer-motion";
+import Aos from "aos";
+import "aos/dist/aos.css";
 import {
   HeroContainer,
   HeroBg,
@@ -16,6 +19,10 @@ import {
 import Video from "../../videos/video.mp4";
 
 function HeroSection() {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
   const [hover, setHover] = useState(false);
   const onHover = () => {
     setHover(!hover);
@@ -29,30 +36,43 @@ function HeroSection() {
   // }
 
   return (
-    <HeroContainer id="home">
+    <HeroContainer id="home" data-aos="zoom-out-down ease-in-out-sine">
       <HeroBg>
         <VideoBg loop muted autoPlay src={Video} type="video/mp4" />
       </HeroBg>
+
       <HeroContent>
-        <HeroH1>Professional Audio Work</HeroH1>
-        <HeroP>
-          We know that greatness in a disruptive era requires bold ambition,
-          curious talent and a culture that believes we're smarter togueter
-        </HeroP>
-        <HeroBtnWrapper>
-          <Button
-            to="about"
-            smooth={true}
-            duration={500}
-            spy={true}
-            exact="true"
-            offset={-80}
-            onMouseEnter={onHover}
-            onMouseLeave={onHover}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 10, duration: 5 }}
+        >
+          <HeroH1>Professional Audio Work</HeroH1>
+
+          <HeroP>Redesigning life through sound</HeroP>
+
+          <motion.div
+            whileHover={{
+              scale: 1.1,
+              textShadow: "0px 0px 8px rgb(255,255,255)",
+            }}
           >
-            Get started {hover ? <ArrowForward /> : <ArrowRight />}
-          </Button>
-        </HeroBtnWrapper>
+            <HeroBtnWrapper>
+              <Button
+                to="about"
+                smooth={true}
+                duration={500}
+                spy={true}
+                exact="true"
+                offset={-80}
+                onMouseEnter={onHover}
+                onMouseLeave={onHover}
+              >
+                Get started {hover ? <ArrowForward /> : <ArrowRight />}
+              </Button>
+            </HeroBtnWrapper>
+          </motion.div>
+        </motion.div>
       </HeroContent>
     </HeroContainer>
   );

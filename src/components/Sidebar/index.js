@@ -26,6 +26,12 @@ function Sidebar({ isOpen, toggle }) {
           <SidebarLink to="services" onClick={toggle}>
             Services
           </SidebarLink>
+          <SidebarLink to="team" onClick={toggle}>
+            Team
+          </SidebarLink>
+          <SidebarLink to="contact" onClick={toggle}>
+            Contact
+          </SidebarLink>
         </SidebarMenu>
       </SidebarWrapper>
     </SidebarContainer>

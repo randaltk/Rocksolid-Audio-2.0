@@ -4,7 +4,7 @@ import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
 
 export const Nav = styled.div`
-  background: #000;
+  background: ${({ scrollNav }) => (scrollNav ? "#000" : "transparent")};
   height: 80px;
   margin-top: -80px;
   display: flex;
@@ -13,7 +13,7 @@ export const Nav = styled.div`
   font-size: 1rem;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 7;
 
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
@@ -44,7 +44,7 @@ export const NavLogo = styled(LinkR)`
 
 export const ImgLogo = styled.img`
   width: 100%;
-  max-width: 214px;
+  max-width: 224px;
   height: 80px;
   justify-self: flex-start;
   cursor: pointer;

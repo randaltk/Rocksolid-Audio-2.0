@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "../ButtonComponent";
+import { motion } from "framer-motion";
 
+import Aos from "aos";
+import "aos/dist/aos.css";
 import {
   InfoContainer,
   InfoWrapper,
@@ -32,10 +35,13 @@ function InfoSection({
   dark,
   dark2,
 }) {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
-        <InfoWrapper>
+        <InfoWrapper data-aos="fade-right">
           <InfoRow imgStart={imgStart}>
             <Column1>
               <TextWrapper>
@@ -44,7 +50,7 @@ function InfoSection({
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
                   <Button
-                    to="home"
+                    to="services"
                     smooth={true}
                     duration={500}
                     spy={true}
@@ -59,10 +65,17 @@ function InfoSection({
                 </BtnWrap>
               </TextWrapper>
             </Column1>
+
             <Column2>
-              <ImgWrap>
-                <Img src={img} alt={alt} />
-              </ImgWrap>
+              <motion.div
+                initial={{ x: "100vw" }}
+                animate={{ x: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <ImgWrap>
+                  <Img src={img} alt={alt} />
+                </ImgWrap>
+              </motion.div>
             </Column2>
           </InfoRow>
         </InfoWrapper>
