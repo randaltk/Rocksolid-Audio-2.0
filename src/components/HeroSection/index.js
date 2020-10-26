@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "../ButtonComponent";
+
 import { motion } from "framer-motion";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -17,6 +17,7 @@ import {
   ArrowRight,
 } from "./styles";
 import Video from "../../videos/video.mp4";
+import { Button } from "../ButtonComponent";
 
 function HeroSection() {
   useEffect(() => {

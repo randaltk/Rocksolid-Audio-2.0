@@ -73,6 +73,13 @@ export const NavMenu = styled.ul`
   text-align: center;
   margin-right: -22px;
 
+  select {
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    margin-left: 1em;
+  }
+
   @media screen and (max-width: 768px) {
     display: none;
   } ;

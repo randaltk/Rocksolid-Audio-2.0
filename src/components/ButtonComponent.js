@@ -8,13 +8,18 @@ export const Button = styled(Link)`
   padding: ${({ big }) => (big ? "14px 48px" : "12px 30px")};
   color: ${({ dark }) => (dark ? "#010606" : "#fff")};
   font-size: ${({ fontBig }) => (fontBig ? "20px" : "16px")};
+
   outline: none;
-  border: none;
   cursor: pointer;
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   transition: all 0.2s ease-in-out;
+  display: ${({ disp }) => (disp ? "none" : "flex")};
 
   &:hover {
     transition: all 0.2s ease-in-out;

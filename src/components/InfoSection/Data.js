@@ -7,13 +7,14 @@ export const homeObjOne = {
   headline: "We approach every challenge holistically, ",
   description:
     "We call this Alchemy, It has the power to build our clients' brands and transform their business.",
-  buttonLabel: "Get started",
+
   imgStart: false,
   img: require("../../images/svg-1.svg"),
   alt: "Car",
   dark: true,
   primary: true,
   darkText: false,
+  buttonLabel: "Get Started",
 };
 export const homeObjTwo = {
   id: "discover",
@@ -22,14 +23,15 @@ export const homeObjTwo = {
   lightTextDesc: false,
   topLine: "Insert your startup legacy text right here Paulo",
   headline: "We approach every challenge holistically, ",
+  buttonLabel: "Get Started",
   description:
     "We call this Alchemy, It has the power to build our clients' brands and transform their business.",
-  buttonLabel: "Learn More",
+
   imgStart: true,
   img: require("../../images/svg-2.svg"),
   alt: "Car",
   dark: false,
-  primary: false,
+  primary: true,
   darkText: true,
 };
 

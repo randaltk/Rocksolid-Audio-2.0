@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../ButtonComponent";
 import { motion } from "framer-motion";
 
@@ -19,6 +19,8 @@ import {
   BtnWrap,
 } from "./styles";
 
+import Form from "../Form/index";
+
 function InfoSection({
   lightBg,
   id,
@@ -38,6 +40,12 @@ function InfoSection({
   useEffect(() => {
     Aos.init({ duration: 1000 });
   }, []);
+  const [isOpen, setIsOpen] = useState(false);
+
+  let menu;
+  if (isOpen) {
+    menu = <Form />;
+  }
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -48,9 +56,11 @@ function InfoSection({
                 <TopLine>{topLine}</TopLine>
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
+
                 <BtnWrap>
                   <Button
-                    to="services"
+                    to=""
+                    onClick={() => setIsOpen(!isOpen)}
                     smooth={true}
                     duration={500}
                     spy={true}
@@ -59,6 +69,7 @@ function InfoSection({
                     primary={primary ? 1 : 0}
                     dark={dark ? 1 : 0}
                     dark2={dark2 ? 1 : 0}
+                    disp={primary ? 1 : 0}
                   >
                     {buttonLabel}
                   </Button>
@@ -78,6 +89,7 @@ function InfoSection({
               </motion.div>
             </Column2>
           </InfoRow>
+          {menu}
         </InfoWrapper>
       </InfoContainer>
     </>

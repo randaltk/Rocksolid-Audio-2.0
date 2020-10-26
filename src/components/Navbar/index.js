@@ -15,6 +15,9 @@ import {
 
 import LogoWeb from "../../assets/el_pesim.png";
 
+import { i18n } from "../../translate/i18n";
+
+const I18N_STORAGE_KEY = "i18nextLng";
 function Navbar({ toggle }) {
   const [scrollNav, setScrollNav] = useState(false);
 
@@ -32,6 +35,14 @@ function Navbar({ toggle }) {
   const toggleHome = () => {
     scroll.scrollToTop();
   };
+
+  const [language] = useState(localStorage.getItem(I18N_STORAGE_KEY));
+
+  const handleSelectChange = (event) => {
+    localStorage.setItem(I18N_STORAGE_KEY, event.target.value);
+    window.location = window.location.reload;
+  };
+
   return (
     <>
       <Nav scrollNav={scrollNav}>
@@ -62,9 +73,8 @@ function Navbar({ toggle }) {
                   spy={true}
                   exact="true"
                   offset={-80}
-                 
                 >
-                  About
+                  {i18n.t("navbar.about")}
                 </NavLinks>
               </NavItem>
 
@@ -77,7 +87,7 @@ function Navbar({ toggle }) {
                   exact="true"
                   offset={-80}
                 >
-                  Discover
+                  {i18n.t("navbar.discover")}
                 </NavLinks>
               </NavItem>
 
@@ -90,7 +100,7 @@ function Navbar({ toggle }) {
                   exact="true"
                   offset={-80}
                 >
-                  Services
+                  {i18n.t("navbar.services")}
                 </NavLinks>
               </NavItem>
               <NavItem>
@@ -102,7 +112,7 @@ function Navbar({ toggle }) {
                   exact="true"
                   offset={-80}
                 >
-                  Our Team
+                  {i18n.t("navbar.team")}
                 </NavLinks>
               </NavItem>
 
@@ -115,9 +125,19 @@ function Navbar({ toggle }) {
                   exact="true"
                   offset={-80}
                 >
-                  Contact
+                  {i18n.t("navbar.contact")}
                 </NavLinks>
               </NavItem>
+
+              <select value={language} onChange={handleSelectChange}>
+                <option id="BRA" value="pt-BR">
+                  PT
+                </option>
+
+                <option id="EN" value="en-US">
+                  EN
+                </option>
+              </select>
             </NavMenu>
           </motion.div>
         </NavbarContainer>
