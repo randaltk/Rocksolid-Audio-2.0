@@ -39,7 +39,6 @@ function Team() {
             <ServicesH2>Mixing</ServicesH2>
             <ServicesP>
               We will carefully polish your project in order to make it sound
-              just like the artists you are used to listen
             </ServicesP>
           </ServicesCard>
 
