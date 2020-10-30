@@ -13,7 +13,7 @@ import {
   NavLinks,
 } from "./styles";
 
-import LogoWeb from "../../assets/el_pesim.png";
+import LogoWeb from "../../assets/logohorizontal.svg";
 
 import { i18n } from "../../translate/i18n";
 

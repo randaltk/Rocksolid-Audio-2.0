@@ -48,7 +48,8 @@ export const ImgLogo = styled.img`
   height: 80px;
   justify-self: flex-start;
   cursor: pointer;
-  margin-left: 24px;
+
+  margin-top: 0.6em;
 `;
 
 export const MobileIcon = styled.div`
