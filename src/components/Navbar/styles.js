@@ -37,8 +37,7 @@ export const NavLogo = styled(LinkR)`
   font-size: 1.5rem;
   display: flex;
   justify-content: flex-start;
-  max-width: 100px;
-
+  max-width: 140px;
   text-decoration: none;
 `;
 
