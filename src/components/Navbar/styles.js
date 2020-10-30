@@ -32,24 +32,23 @@ export const NavbarContainer = styled.div`
 
 export const NavLogo = styled(LinkR)`
   color: #fff;
-  justify-self: flex-start;
+
   cursor: pointer;
   font-size: 1.5rem;
   display: flex;
-  align-items: center;
-  margin-left: 24px;
-  font-weight: bold;
+  justify-content: flex-start;
+  max-width: 100px;
+
   text-decoration: none;
 `;
 
 export const ImgLogo = styled.img`
   width: 100%;
-  max-width: 224px;
-  height: 80px;
-  justify-self: flex-start;
-  cursor: pointer;
+  display: flex;
 
-  margin-top: 0.6em;
+  height: 80px;
+
+  cursor: pointer;
 `;
 
 export const MobileIcon = styled.div`
